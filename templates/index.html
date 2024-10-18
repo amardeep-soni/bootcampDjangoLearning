@@ -39,22 +39,21 @@
     </nav>
 
 
-
-    <section class="site-hero" style="background-image: url(/static/images/heroImage.jpg);" id="section-home"
+    {% for person in data %}
+    <section class="site-hero" style="background-image: url({{ person.image.url }});" id="section-home"
         data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row intro-text align-items-center justify-content-center position-relative">
                 <div class="col-md-10 text-center pt-5">
-
-                    <h1 class="site-heading">Hello, I'm <strong class="d-block">Amardeep Soni</strong>
+                    <h1 class="site-heading">Hello, I'm <strong class="d-block">{{ person.name }}</strong>
                     </h1>
-                    <h2>Full Stack Developer</h2>
+                    <h2>{{person.position}}</h2>
                     <strong class="d-block text-white text-uppercase letter-spacing">and this is My Resume</strong>
                 </div>
             </div>
         </div>
     </section> <!-- section -->
-
+    {% endfor %}
 
     <section class="site-section" id="section-project">
         <div class="container">
@@ -238,36 +237,32 @@
                 </div>
             </div>
         </div>
-    </section> <!-- .section -->
-
+    </section>
+     <!-- .section -->
+    {% for person in data %}
     <section class="site-section" id="section-about">
         <div class="container">
             <div class="row mb-5 align-items-center">
                 <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-                    <img src="{%static 'images/heroImage.jpg' %}" alt="Image placeholder" class="img-fluid">
+                    <img src="{{ person.image.url }}" alt="Image placeholder" class="img-fluid">
                 </div>
                 <div class="col-lg-5 pl-lg-5">
                     <div class="section-heading">
                         <h2>About <strong>Me</strong></h2>
                     </div>
                     <p class="lead">
-                        Passionate and experienced Full Stack Developer with over two years of hands-on
-                        expertise in building and maintaining web applications. Proficient in frontend development using
-                        Angular and backend technologies in .NET, with a strong foundation in JavaScript, Java, and PHP.
-                        Skilled in developing user-friendly, scalable solutions, including membership features and
-                        complex systems.
+                        {{ person.about_me}}
                     </p>
 
                     <p>
                         <a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Hire Me</a>
-                        <a href="#" class="btn btn-secondary px-4 py-2 btn-sm">Download Resume</a>
+                        <a href="{{ person.resume_file.url }}" class="btn btn-secondary px-4 py-2 btn-sm">Download Resume</a>
                     </p>
                 </div>
             </div>
-
-
         </div>
     </section>
+    {% endfor %}
 
     <section class="site-section">
         <div class="container">
