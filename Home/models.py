@@ -9,5 +9,8 @@ class Home(models.Model):
     image = models.ImageField(upload_to="pictures/")
     about_me = models.TextField()
 
-    def __str__(self):
-        return self.name
+class Service(models.Model):
+    service_icon = models.CharField(max_length=100)
+    service_title = models.CharField(max_length=100)
+    service_desc = models.TextField()
+
