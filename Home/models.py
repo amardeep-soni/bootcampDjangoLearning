@@ -9,6 +9,13 @@ class Home(models.Model):
     resume_file = models.FileField(upload_to="results/")
     image = models.ImageField(upload_to="pictures/")
     about_me = models.TextField()
+    email = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
+    address = models.CharField(max_length=200)
+    facebook_link = models.CharField(max_length=200)
+    linkedin_link = models.CharField(max_length=200)
+    instagram_link = models.CharField(max_length=200)
+    github_link = models.CharField(max_length=200)
 
 
 class Service(models.Model):
