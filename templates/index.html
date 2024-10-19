@@ -274,45 +274,20 @@
                 </div>
             </div>
             <div class="row">
+                {% for testimonial in testimonials %}
                 <div class="col-md-6">
-
                     <div class="block-47 d-flex mb-5">
                         <div class="block-47-image">
-                            <img src="{%static 'images/person_1.png' %}" alt="Image placeholder" class="img-fluid">
+                            <img src="{{testimonial.image.url}}" alt="Image placeholder" class="img-fluid">
                         </div>
                         <blockquote class="block-47-quote">
-                            <p>&ldquo;Working with Amardeep was a seamless experience. His expertise in full-stack
-                                development and attention to detail helped us build a robust web application that met
-                                all of our business needs. He has demonstrated exceptional skill in managing multiple
-                                projects simultaneously, even under significant pressure. Amardeep's ability to stay
-                                focused, meet deadlines, and deliver high-quality results has truly been a game changer
-                                for our team.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; <span class="text-warning">Ganesh Sah SuperGDev
-                                    Consultancy,
-                                    Founder</span></cite>
+                            <p>&ldquo;{{testimonial.message}}&rdquo;</p>
+                            <p><span class="text-warning">@{{testimonial.name}}</span></p>
+                            <cite class="block-47-quote-author">&mdash; <span class="text-warning">@{{testimonial.compnay_position}}</span></cite>
                         </blockquote>
                     </div>
-
                 </div>
-
-                <div class="col-md-6">
-
-                    <div class="block-47 d-flex mb-5">
-                        <div class="block-47-image">
-                            <img src="{%static 'images/person_1.png' %}" alt="Image placeholder" class="img-fluid">
-                        </div>
-                        <blockquote class="block-47-quote">
-                            <p>&ldquo;Amardeep has been my student, and I’ve seen firsthand how hardworking and quick
-                                to learn he is. We collaborated on several WordPress projects, where he consistently
-                                delivered high-quality results. His ability to manage client expectations and meet their
-                                needs is truly impressive.&rdquo;</p>
-                            <cite class="block-47-quote-author">&mdash; <span class="text-warning">Param Coaching and
-                                    Training Center, Founder</span></cite>
-                        </blockquote>
-                    </div>
-
-                </div>
-
+                    {% endfor %}
             </div>
         </div>
     </section>
