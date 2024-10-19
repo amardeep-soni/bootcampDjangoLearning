@@ -73,128 +73,22 @@
 
             <div class="filters-content">
                 <div class="row grid">
+                    {% for project in projects %}
                     <div class="single-portfolio col-sm-4 all mockup">
                         <div class="relative">
                             <div class="thumb">
                                 <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p1.png' %}" alt="">
+                                <img class="image img-fluid" src="{{project.image.url}}" alt="">
                             </div>
                         </div>
-                        <div class="p-inner">
-                            <h4>Login Form</h4>
-                            <p class="language">HTML & CSS</p>
-                            <a target="_blank" href="https://css.amardeepdev.com/formDesign">View Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=formDesign">View
-                                Live</a>
+                        <div class="p-inner mb-4 buttons">
+                            <h4>{{project.name}}</h4>
+                            <p class="language mb-2">{{project.languages_used}}</p>
+                            <a target="_blank" class="btn btn-light" href="{{project.repo_link}}"> <i class="fa-brands fa-github"></i> View Repo</a>
+                            <a target="_blank" class="btn btn-light" href="{{project.live_link}}"> <i class="fa fa-eye"></i> View Live</a>
                         </div>
                     </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p2.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>Chatting Application</h4>
-                            <p class="language">JS, PHP</p>
-                            <a target="_blank" href="https://chat.amardeepdev.com">View Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=chat">View
-                                Live</a>
-                        </div>
-                    </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p3.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>NotePad</h4>
-                            <p class="language">JS, PHP</p>
-                            <a target="_blank" href="https://notepad.amardeepdev.com">View Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=notepad">View
-                                Live</a>
-                        </div>
-                    </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p4.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>Alarm Clock</h4>
-                            <p class="language">JS</p>
-                            <a target="_blank" href="https://alarm.amardeepdev.com">View Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=alarm">View
-                                Live</a>
-                        </div>
-                    </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p5.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>Number Guessing Game</h4>
-                            <p class="language">JS</p>
-                            <a target="_blank" href="https://www.jsgames.amardeepdev.com/NumberGuessingGame">View
-                                Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=numberGuess">View
-                                Live</a>
-                        </div>
-                    </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p6.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>Rock Paper Scissor Game</h4>
-                            <p class="language">JS</p>
-                            <a target="_blank" href="https://www.jsgames.amardeepdev.com/RockPaperScissor">View
-                                Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=rockPaperScissor">View
-                                Live</a>
-                        </div>
-                    </div>
-
-                    <div class="single-portfolio col-sm-4 all mockup">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{%static 'images/p7.png' %}" alt="">
-                            </div>
-                        </div>
-                        <div class="p-inner">
-                            <h4>Custom Context Menu</h4>
-                            <p class="language">JS</p>
-                            <a target="_blank" href="https://right-click.amardeepdev.com">View
-                                Details</a>
-                            <a target="_blank" class="ms-3"
-                                href="https://amardeepdev.com/project-details.php?proj=right-click">View
-                                Live</a>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </div>

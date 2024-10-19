@@ -36,3 +36,10 @@ class Experience(models.Model):
     company_name = models.CharField(max_length=100)
     company_location = models.CharField(max_length=100)
     job_type = models.CharField(max_length=100)
+
+class Projects(models.Model):
+    image = models.ImageField(upload_to="pictures/project")
+    name = models.CharField(max_length=100)
+    languages_used = models.CharField(max_length=100)
+    repo_link  = models.CharField(max_length=200)
+    live_link = models.CharField(max_length=200)

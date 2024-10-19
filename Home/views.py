@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Home, Service, Testimonial, Education, Experience
+from .models import Home, Service, Testimonial, Education, Experience, Projects
 
 
 # Create your views here.
@@ -11,6 +11,7 @@ def index(request):
     testimonial = Testimonial.objects.all()
     education = Education.objects.all()
     experience = Experience.objects.all()
-    context = {"data": data, "services": service, "testimonials": testimonial, "experiences": experience, "educations": education}
+    project = Projects.objects.all()
+    context = {"data": data, "services": service, "testimonials": testimonial, "experiences": experience, "educations": education, "projects": project}
 
     return render(request, "index.html", context)

@@ -650,3 +650,7 @@ a:active {
     top: 28px;
     right: 30px;
 }
+
+.single-portfolio .btn{
+    letter-spacing: .1rem;
+}
