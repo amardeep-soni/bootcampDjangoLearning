@@ -5,3 +5,5 @@ from .models import *
 admin.site.register(Home)
 admin.site.register(Service)
 admin.site.register(Testimonial)
+admin.site.register(Education)
+admin.site.register(Experience)

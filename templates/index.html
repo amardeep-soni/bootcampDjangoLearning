@@ -210,31 +210,27 @@
                 </div>
                 <div class="col-md-6">
                     <h2 class="mb-5">Education</h2>
+                    {% for education in educations %}
                     <div class="resume-item mb-4">
-                        <span class="date"><span class="icon-calendar"></span> March 2019 - 2023</span>
-                        <h3>Diploma in Computer Science and Engineering</h3>
-                        <span class="school">Monad University</span>
+                        <span class="date"><span class="icon-calendar"></span>{{education.start_month_year}} - {{education.end_month_year}}</span>
+                        <h3>{{education.course_name}}</h3>
+                        <span class="school">{{education.Institue_name}}</span>
                     </div>
-
-                    <div class="resume-item mb-4">
-                        <span class="date"><span class="icon-calendar"></span> September 2024 - Present</span>
-                        <h3>Web Development Bootcamp</h3>
-                        <span class="school">Neelgai</span>
-                    </div>
-
+                    {% endfor %}
                 </div>
+                
                 <div class="col-md-6">
-
-
                     <h2 class="mb-5">Experience</h2>
-
-                    <div class="resume-item mb-4">
-                        <span class="date"><span class="icon-calendar"></span> October 2022 - Present</span>
-                        <h3>FullStack Developer</h3>
-                        <span class="school">SuperGDev Consultancy</span>
+                    {% for experience in experiences %}
+                    <div class="resume-item mb-4 position-relative">
+                        <span class="date"><span class="icon-calendar"></span>{{experience.start_month_year}} - {{experience.end_month_year}}</span>
+                        <h3>{{experience.position}}</h3>
+                        <span class="school">{{experience.company_name}}, {{experience.company_location}}</span>
+                        <span class="job-type badge">{{experience.job_type}}</span>
                     </div>
-
+                    {% endfor %}
                 </div>
+                
             </div>
         </div>
     </section>
