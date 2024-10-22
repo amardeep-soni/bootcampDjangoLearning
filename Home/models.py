@@ -50,3 +50,12 @@ class Projects(models.Model):
     languages_used = models.CharField(max_length=100)
     repo_link  = models.CharField(max_length=200)
     live_link = models.CharField(max_length=200)
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"Message from {self.name} - {self.email}"
